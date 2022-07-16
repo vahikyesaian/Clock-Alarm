@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontello-b3e18e05/css/fontello.css">
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background-image: linear-gradient(30deg,rgb(10, 10, 10),rgb(49, 47, 47),rgb(13, 12, 12));
+        }
+        .clock{
+            width: 100%;
+            height: 100vh;
+            /* border: 10px solid red; */
+        }
+        .clock>.head{
+            width: 100%;
+            height: 50px;
+            /* border: 3px solid brown; */
+            
+        }
+        .clock>.head>h2{
+            font-size: 3vw;
+            color: white;
+            text-transform: capitalize;
+            padding-left: 10px;
+        }
+        .clock>div:nth-of-type(2){
+            width: 100%;
+            height: 50px;
+            /* border: 2px solid blue; */
+            padding: 10px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.314);
+        }
+        .clock>div:nth-of-type(2)>i{
+            font-size: 1.5vw;
+            color: white;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+        i::after{
+            content: '';
+            width: 1px;
+            height: 12px;
+            border: .1px solid white;
+            margin-left: 10px;
+
+            
+        }
+        .clock>div:nth-of-type(2)>p{
+            font-size: 1.5vw;
+            text-transform: capitalize;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-weight: bolder;
+            color: white;
+            position: absolute;
+            top: 10px;left: 130px;
+        }
+        .clock>div:nth-of-type(3){
+            width: 100%;
+            height: 50px;
+            /* border: 2px solid gray; */
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.314);
+        }
+        .clock>div:nth-of-type(3)>p{
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.612);
+            text-transform: capitalize;
+            position: absolute;
+            top: 10px;left: 10px;
+            
+        }
+        .clock>div:nth-of-type(3)>a{
+            font-size: 21px;
+            background-color: gray;
+            border: 1px solid gray;
+            border-radius: 35%;
+            position: absolute;
+            top: 10px;right: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: orange;
+            width: 5.5%;
+            height: 65%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .clock>div:nth-of-type(3)>a:hover{
+            background-color: rgba(245, 245, 245, 0.662);
+            color: black;
+        }
+        .clock>div:nth-of-type(4){
+            width: 100%;
+            height: 50px;
+            /* border: 2px solid green; */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.314);
+            
+        }
+        .clock>div:nth-of-type(4)>p{
+            font-size: 18px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            text-transform: capitalize;
+            color: white;
+        }
+        .alarm{
+            width: 100%;
+            height: 80px;
+            /* border: 1px solid red; */
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.314);
+            
+            
+        }
+        .alarm>p:nth-of-type(1){
+            font-size: 3vw;
+            color: whitesmoke;
+            text-transform: uppercase;
+            padding-left: 10px;
+            
+
+
+        }
+        .alarm>p:nth-of-type(1)>span{
+            color: whitesmoke;
+            font-size: 20px;
+            
+        }
+        .alarm>p:nth-of-type(2){
+            font-size: 15px;
+            color: whitesmoke;
+            padding-left: 10px;
+            text-transform: capitalize;
+        }
+        .alarm>section{
+            width: 50px;
+            height: 20px;
+            border: 1px solid gray;
+            border-radius: 20%;
+            position: absolute;
+            top: 10px; right: 30px;
+            transition-property: background-color;
+            transition-duration:1s ;
+            transition-delay: .4s;
+        }
+        .alarm>section>div{
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background-color: white;
+            margin: 1px 0;
+            transition-property: margin, background-color;
+            transition-duration: .4s, .3s;
+            transition-delay: .1s, .5s;
+            transition-timing-function: linear;
+        }
+        .alarm>section:hover div{
+            margin: 1px 30px;
+            background-color: black;
+
+        }
+        .alarm>section:hover{
+            background-color: greenyellow;
+        }
+
+      
+        .clock>div:nth-of-type(6){
+            width: 100%;
+            height: 80px;
+            /* border: 1px solid red; */
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.314);
+        }
+        .clock>div:nth-of-type(6)>p:nth-of-type(1){
+            font-size: 3vw;
+            color: whitesmoke;
+            text-transform: uppercase;
+            padding-left: 15px;
+        }
+        .clock>div:nth-of-type(6)>p:nth-of-type(1)>span{
+            color: whitesmoke;
+            font-size: 20px;
+        }
+        .clock>div:nth-of-type(6)>p:nth-of-type(2){
+            font-size: 15px;
+            color: whitesmoke;
+            padding-left: 10px;
+            text-transform: capitalize;
+            padding-left: 15px;
+        }
+        .clock>div:nth-of-type(6)>section{
+            width: 50px;
+            height: 20px;
+            border: 1px solid gray;
+            border-radius: 20%;
+            position: absolute;
+            top: 10px; right: 30px;
+            transition-property: background-color;
+            transition-duration:1s ;
+            transition-delay: .4s;
+        }
+        .clock>div:nth-of-type(6)>section>div{
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background-color: white;
+            margin: 1px 0;
+            transition-property: margin, background-color;
+            transition-duration: .4s, .3s;
+            transition-delay: .1s, .5s;
+            transition-timing-function: linear;
+        }
+        .clock>div:nth-of-type(6)>section:hover div{
+            margin: 1px 30px;
+            background-color: black;
+        }
+        .clock>div:nth-of-type(6)>section:hover{
+            background-color: greenyellow;
+        }
+        .clock>div:nth-of-type(7){
+            width: 100%;
+            height: 80px;
+            /* border: 1px solid red; */
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.314);
+        }
+        .clock>div:nth-of-type(7)>p:nth-of-type(1){
+            font-size: 3vw;
+            color: whitesmoke;
+            text-transform: uppercase;
+            padding-left: 15px;
+        }
+        .clock>div:nth-of-type(7)>p:nth-of-type(1)>span{
+            color: whitesmoke;
+            font-size: 20px;
+        }
+        .clock>div:nth-of-type(7)>p:nth-of-type(2){
+            font-size: 15px;
+            color: whitesmoke;
+            padding-left: 10px;
+            text-transform: capitalize;
+            padding-left: 15px;
+        }
+        .clock>div:nth-of-type(7)>section{
+            width: 50px;
+            height: 20px;
+            border: 1px solid gray;
+            border-radius: 20%;
+            position: absolute;
+            top: 10px; right: 30px;
+            transition-property: background-color;
+            transition-duration:1s ;
+            transition-delay: .4s;
+        }
+        .clock>div:nth-of-type(7)>section>div{
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background-color: white;
+            margin: 1px 0;
+            transition-property: margin, background-color;
+            transition-duration: .4s, .3s;
+            transition-delay: .1s, .5s;
+            transition-timing-function: linear;
+        }
+        .clock>div:nth-of-type(7)>section:hover div{
+            margin: 1px 30px;
+            background-color: black;
+        }
+        .clock>div:nth-of-type(7)>section:hover{
+            background-color: greenyellow;
+        }
+        .clock>div:nth-of-type(8){
+            width: 100%;
+            height: 80px;
+            /* border: 1px solid red; */
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.314);
+        }
+        .clock>div:nth-of-type(8)>p:nth-of-type(1){
+            font-size: 3vw;
+            color: whitesmoke;
+            text-transform: uppercase;
+            padding-left: 15px;
+        }
+        .clock>div:nth-of-type(8)>p:nth-of-type(1)>span{
+            color: whitesmoke;
+            font-size: 20px;
+        }
+        .clock>div:nth-of-type(8)>p:nth-of-type(2){
+            font-size: 15px;
+            color: whitesmoke;
+            padding-left: 10px;
+            text-transform: capitalize;
+            padding-left: 15px;
+        }
+        .clock>div:nth-of-type(8)>section{
+            width: 50px;
+            height: 20px;
+            border: 1px solid gray;
+            border-radius: 20%;
+            position: absolute;
+            top: 10px; right: 30px;
+            transition-property: background-color;
+            transition-duration:1s ;
+            transition-delay: .4s;
+           
+        }
+        .clock>div:nth-of-type(8)>section>div{
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background-color: white;
+            margin: 1px 0;
+            transition-property: margin, background-color;
+            transition-duration: .4s, .3s;
+            transition-delay: .1s, .5s;
+            transition-timing-function: linear;
+        }
+        .clock>div:nth-of-type(8)>section:hover div{
+            margin: 1px 30px;
+            background-color: black;
+        }
+        .clock>div:nth-of-type(8)>section:hover{
+            background-color: greenyellow;
+        }
+        </style>
+</head>
+<body>
+    <section class="clock">
+        <div class="head">
+            <h2>alarm</h2>
+        </div>
+        <div>
+            <i class="demo-icon icon-bed_fill0_wght400_grad0_opsz48"> sleep</i>
+            <p>wake up</p>
+        </div>
+        <div>
+            <p>no alarm</p>
+            <a href="">set up</a>
+        </div>
+        <div>
+            <p>other</p>
+        </div>
+        <div class="alarm">
+            <p>12:00 <span>am</span></p>
+            <p>alarm</p>
+            <section>
+                <div>
+
+                </div>
+            </section>
+     
+        </div>
+        <div>
+            <p>3:30 <span>am</span></p>
+            <p>alarm</p>
+            <section>
+                <div>
+
+                </div>
+            </section>
+        </div>
+        </div>
+        <div>
+            <p>4:00 <span>pm</span></p>
+            <p>alarm</p>
+            <section>
+                <div>
+
+                </div>
+            </section>
+        </div>
+        <div>
+            <p>6:00 <span>pm</span></p>
+            <p>alarm</p>
+            <section>
+                <div>
+
+                </div>
+            </section>
+        </div>
+
+    </section>
+</body>
+</html>
